@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <h2>Editar Marca</h2>
-    <form method="POST" action="{{ route('marca.editar')}}">
+    <form method="POST" action="{{ route('marca.editar',$marca->id)}}">
         @csrf
         @method('POST')
 

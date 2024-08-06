@@ -14,6 +14,7 @@
         <tbody>
         @foreach ($marcas as $marca)
             <tr>
+                <td>{{$marca->id}}
                 <td>{{ $marca->nome_marca }}</td>
             </tr>
         @endforeach

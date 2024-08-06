@@ -30,12 +30,13 @@ class produtoController extends Controller
 
 
     public function edit($id) {
-        
+        $produto = Produto::find($id);
+        return view('editarProduto')->with('produto',$produto);
     }
 
 
     public function update(Request $request, $id) { 
-        $produto = Produto::find($request->id);
+        $produto = Produto::findOrFail($request->id);
         $produto->nome_produto = $request->nome_produto;
         $produto->valor = $request->valor;
         $produto->data_validade = $request->data_validade;

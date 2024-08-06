@@ -16,7 +16,7 @@
         <tbody>
         @foreach ($produtos as $produto)
             <ul>
-            <li>{{ $produto->nome_produto }} - {{ $produto->valor }} - {{ $produto->data_validade }} - {{ $produto->id_marca }}</li>z
+            <li>{{$produto->id}} - {{ $produto->nome_produto }} - {{ $produto->valor }} - {{ $produto->data_validade }} - {{ $produto->id_marca }}</li>
 </ul>
         @endforeach
         </tbody>

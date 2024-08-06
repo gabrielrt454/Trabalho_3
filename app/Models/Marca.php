@@ -4,11 +4,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 class Marca extends Model
 {
-use HasFactory;
-protected $table = 'marcas';
-protected $fillable = ['nome_marca'];
-public function produtos()
-{
-    return $this->hasMany(Produto::class, 'id_marca');
-}
+    use HasFactory;
+    protected $table = 'marcas';
+    protected $fillable = ['nome_marca'];
+    public function produtos()
+        {
+            return $this->hasMany(Marca::class, 'id_marca',id);
+        }
 }

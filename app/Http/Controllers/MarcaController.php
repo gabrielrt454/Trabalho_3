@@ -28,14 +28,17 @@ class MarcaController extends Controller
     
     
         public function edit($id) {
-            return view('editarMarca');
+            $marca = Marca::find($id);
+            return view('editarMarca')->with('marca',$marca);
         }
     
     
         public function update(Request $request, $id) { 
-            $marca = Marca::find($request->$id);
+            //return $request->all();
+            $marca = Marca::findOrFail($id);
             $marca->nome_marca = $request->nome_marca;
             $marca->save();
+            return redirect()->route('marca.listar');
          }
     }
 

@@ -11,8 +11,16 @@ Route::post('salvarMarca', [App\Http\Controllers\MarcaController::class, 'store'
     ->name('marca.salvar');
 
 
-Route::post('editarMarca', [App\Http\Controllers\MarcaController::class, 'update'])
-    ->name('marca.editar');
+
+
+Route::get('editarMarca/{id}', [App\Http\Controllers\MarcaController::class, 'edit']);
+Route::post('updateMarca/{id}',[App\Http\Controllers\MarcaController::class,'update'])
+        ->name('marca.editar');
+
+Route::get('editarProduto/{id}', [App\Http\Controllers\ProdutoController::class, 'edit']);
+Route::post('updateProduto/{id}',[App\Http\Controllers\ProdutoController::class,'update'])
+            ->name('produto.editar');
+
 
 
 Route::get('/produtos', [App\Http\Controllers\produtoController::class, 'index'])

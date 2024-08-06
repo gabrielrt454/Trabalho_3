@@ -7,10 +7,10 @@ class Produto extends Model
     use HasFactory;
     protected $table = 'produtos';
     protected $fillable = ['nome_produto', 'valor', 'data_validade', 'id_marca'];
-    protected $with = ['marcas'];
+    //protected $with = 'marcas';
 
     public function marca()
     {
-        return $this->belongsTo(Marca::class, 'id_marca');
+        return $this->belongsTo(Marca::class, 'id_marca',id);
     }
 }
